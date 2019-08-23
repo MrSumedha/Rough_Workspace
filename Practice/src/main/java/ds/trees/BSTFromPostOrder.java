@@ -16,7 +16,7 @@ class Node {
 
 public class BSTFromPostOrder {
 
-	Node constructTree(int post[], int n) {
+	Node constructTreeFromPostOrder(int post[], int n) {
 		Node root = new Node(post[n - 1]);
 		
 		Stack<Node> stack = new Stack<>();
@@ -40,6 +40,12 @@ public class BSTFromPostOrder {
 		}
 		return root;
 	}
+	
+	Node constructTreeFromInOrder(int inorder[], int n) {
+		Node root = new Node(inorder[n/2]);
+		
+		return root;
+	}
 
 	// A utility function to print inorder traversal
 	// of a Binary Tree
@@ -57,7 +63,7 @@ public class BSTFromPostOrder {
 		int post[] = new int[] { 1, 7, 5, 50, 40, 10 };
 		int size = post.length;
 
-		Node root = tree.constructTree(post, size);
+		Node root = tree.constructTreeFromPostOrder(post, size);
 
 		System.out.println("Inorder traversal of the constructed tree:");
 		tree.printInorder(root);
