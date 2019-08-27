@@ -2,15 +2,8 @@ package algo.DP;
 
 public class CoinChange {
 	
-	static void toString(int S[], int m) {
-		for (int i = 0 ; i<= m; i++) {
-			System.out.print(S[i] + ",");
-		}
-	}
-	
 	static int count(int S[], int m, int n) {
 		if (n == 0) {
-			toString(S,m);
 			System.out.println("Returning 1 at m = " + m);
 			return 1;
 		}
