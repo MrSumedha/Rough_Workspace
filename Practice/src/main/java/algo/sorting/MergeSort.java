@@ -34,8 +34,7 @@ public class MergeSort {
 			b = mergeSort(arr, mid + 1, high);
 			return merge(a, b);
 		} else {
-			int[] tarr = { arr[low] };
-			return tarr;
+			return new int[]{ arr[low] };
 		}
 	}
 
