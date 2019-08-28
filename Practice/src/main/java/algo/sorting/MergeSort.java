@@ -3,10 +3,8 @@ package algo.sorting;
 public class MergeSort {
 
 	public static int[] merge(int[] a, int[] b) {
-		if (b == null)
-			return a;
-		if (a == null)
-			return b;
+		if (b == null) return a;
+		if (a == null) return b;
 		int[] c = new int[a.length + b.length];
 		int i = 0, j = 0, k = 0;
 		while (i < a.length && j < b.length) {
