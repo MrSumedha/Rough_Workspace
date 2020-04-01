@@ -6,3 +6,6 @@
 /.metadata/
 */build/
 .gitconfig
+*.idea
+/bin/
+log.*
