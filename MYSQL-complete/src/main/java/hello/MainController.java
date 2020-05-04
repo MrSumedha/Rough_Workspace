@@ -1,5 +1,7 @@
 package hello;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +37,18 @@ public class MainController {
 		Location location = new Location();
 		location.setCityName(cityName);
 		location.setCountryName(countryName);
+		
+		User user1 = new User();
+		user1.setName("abc");
+		user1.setEmail("emmn@nnnm");
+		user1.setLocation(location);
+		
+		User user2 = new User();
+		user2.setName("def");
+		user2.setEmail("def@asd");
+		user2.setLocation(location);
+		
+		location.setUsers(Arrays.asList(user1, user2));
 		locationRepository.save(location);
 		return "Saved";
 	}
@@ -42,11 +56,7 @@ public class MainController {
 	@GetMapping(path = "/all/users")
 	public @ResponseBody Iterable<User> getAllUsers() throws InterruptedException {
 		User user = userRepository.findById(1).get();
-		user.setEmail("newemail.com");
-		new Thread(() -> {
-			System.out.println(userRepository.findById(1).get().getEmail());
-		}).start(); 
-		Thread.sleep(5000);
+		user.setEmail("newemail.po.com");
 		userRepository.save(user);
 		return userRepository.findAll();
 	}
