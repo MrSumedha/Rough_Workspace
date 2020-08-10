@@ -3,17 +3,7 @@ package ds.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node {
-    int data;
-    Node right, left;
-
-    public Node(int val) {
-        this.data = val;
-        this.left = this.right = null;
-    }
-}
-
-public class BinaryTreeViews {
+public class BTRightView {
 
     private static void printRightView(Node root) {
         if (root == null) return;

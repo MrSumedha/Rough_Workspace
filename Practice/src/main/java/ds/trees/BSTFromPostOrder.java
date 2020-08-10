@@ -3,15 +3,6 @@ package ds.trees;
 import java.util.Stack;
 
 public class BSTFromPostOrder {
-  private class Node {
-    int data;
-    Node left, right;
-
-    public Node(int data) {
-      this.data = data;
-      left = right = null;
-    }
-  }
 
   private Node constructTreeFromPostOrder(int post[], int n) {
     Node root = new Node(post[n - 1]);
