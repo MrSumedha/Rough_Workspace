@@ -8,6 +8,7 @@
 
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
+apply plugin: 'java'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -22,6 +23,9 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:23.0'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.5'
+    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'

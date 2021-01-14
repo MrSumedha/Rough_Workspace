@@ -1,23 +1,44 @@
 package main;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import org.apache.commons.lang.time.DateUtils;
+
 import java.util.Date;
-import java.util.TimeZone;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Solution {
 
-	public static void main(String[] args) {
-		String DEFAULT_DATE_FORMAT = "dd/MM/yyyy HH:mm:ss";
-		Date now = new Date();
-		SimpleDateFormat sdfLocal = new SimpleDateFormat(DEFAULT_DATE_FORMAT);
-		sdfLocal.setTimeZone(TimeZone.getDefault());
-		SimpleDateFormat sdfIst = new SimpleDateFormat(DEFAULT_DATE_FORMAT);
-		sdfIst.setTimeZone(TimeZone.getTimeZone("IST"));
-		try {
-			System.out.println(sdfLocal.parse(sdfIst.format(now)));
-		} catch (ParseException e) {
-		}
-	}
+    private class SinglyLinkedListNode {
+        int data;
+        SinglyLinkedListNode next;
+    }
+
+    private static void reversePrint(SinglyLinkedListNode head) {
+        SinglyLinkedListNode previous,current,next;
+        previous = null;
+        current = head;
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        head = previous;
+        while (head != null) {
+            System.out.println(head.data);
+            head = head.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        Date date = new Date();
+        System.out.println(date);
+        date = DateUtils.setDays(date, 4);
+        date = DateUtils.setMinutes(date, 10);
+        System.out.println(date);
+
+        Queue<Integer> queue = new LinkedList<>();
+    }
 }
+
+
